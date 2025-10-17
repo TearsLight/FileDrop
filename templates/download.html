@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件下载</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/download-style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>📥 文件下载</h1>
+        <p class="subtitle">查看和下载已上传的文件</p>
+
+        <div class="controls">
+            <div class="file-count" id="fileCount">文件数量: 0</div>
+            <button class="refresh-btn" id="refreshBtn">🔄 刷新列表</button>
+        </div>
+
+        <div class="files-list" id="filesList">
+            <div class="loading">
+                <div class="spinner"></div>
+                <div>加载中...</div>
+            </div>
+        </div>
+
+        <a href="/upload" class="nav-link">← 返回上传页面</a>
+    </div>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="{{ url_for('static', filename='assets/backgroundVideo.mp4') }}" type="video/mp4">
+    </video>
+    <script src="{{ url_for('static', filename='js/download-script.js') }}"></script>
+</body>
+</html>
